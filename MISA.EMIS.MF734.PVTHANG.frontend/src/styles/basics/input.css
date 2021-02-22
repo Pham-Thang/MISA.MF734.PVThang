@@ -1,0 +1,84 @@
+.m-input {
+    width: calc(100% - 24px - 2px);
+    height: 30px;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    padding: 0 12px 0 12px;
+    font-family: 'OpenSans-Regular';
+    font-size: 13px;
+    color: #000;
+    outline: none;
+}
+
+.m-input:focus {
+    border: 1px solid #4CB050;
+}
+
+input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+    input[type="checkbox"] + label {
+        cursor: pointer;
+    }
+
+    input[type="checkbox"] + label span{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        vertical-align:middle;
+        cursor: pointer;
+        background-image: url('../../assets/ImagesIcons/ic_Checkbox_Inactive.svg');
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    input[type="checkbox"]:checked + label span{
+        background-image: url('../../assets/ImagesIcons/ic_Checkbox_Active.svg');
+    }
+
+    input[type="checkbox"] + label span.convert{
+        background-image: url('../../assets/ImagesIcons/ic_Checkbox_Active.svg');
+    }
+
+    input[type="checkbox"]:checked + label span.convert{
+        background-image: url('../../assets/ImagesIcons/ic_Checkbox_Inactive.svg');
+    }
+
+input[type="radio"] {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+    input[type="radio"] + label {
+        cursor: pointer;
+    }
+
+    input[type="radio"] + label span{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        vertical-align:middle;
+        cursor: pointer;
+        background-image: url('../../assets/ImagesIcons/ic_Ratio_Inactive.svg');
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    input[type="radio"]:checked + label span{
+        background-image: url('../../assets/ImagesIcons/ic_Ratio_Active.svg');
+    }
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}

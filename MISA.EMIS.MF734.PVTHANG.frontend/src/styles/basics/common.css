@@ -1,0 +1,107 @@
+.float--left {
+    float: left;
+}
+
+.float--right {
+    float: right;
+}
+
+.m-flex {
+    display: flex;
+}
+
+.m-flex-1 {
+    flex: 1;
+}
+
+.m-flex-3 {
+    flex: 3;
+}
+
+.m-red {
+    color: red;
+}
+
+.m-blue {
+    color: #09a1eb;
+}
+
+.m-text-right {
+    text-align: right;
+}
+
+.icon-dashboard {
+    background-image: url('../../assets/ImagesIcons/ic_TongQuan_32.svg');
+}
+
+.icon-planning-fees {
+    background-image: url('../../assets/ImagesIcons/ic_LapKeHoachThu_32.svg');
+}
+
+.icon-manage-fees {
+    background-image: url('../../assets/ImagesIcons/ic_QuanLyThu_32.svg');
+}
+
+.icon-manage-bill {
+    background-image: url('../../assets/ImagesIcons/ic_HoaDon_32.svg');
+}
+
+.icon-receivable-payable {
+    background-image: url('../../assets/ImagesIcons/ic_SoThu_32.svg');
+}
+
+.icon-report {
+    background-image: url('../../assets/ImagesIcons/ic_BaoCao_32.svg');
+}
+
+.icon-message {
+    background-image: url('../../assets/ImagesIcons/ic_TinNhan_32.svg');
+}
+
+.icon-system {
+    background-image: url('../../assets/ImagesIcons/ic_HeThong_32.svg');
+}
+
+.icon-avatar {
+    background: url('../../assets/ImagesIcons/Avatar.png') no-repeat center;
+}
+
+.icon-search {
+    background: url('../../assets/ImagesIcons/search.svg') no-repeat center;
+}
+
+.icon-x {
+    background: url('../../assets/ImagesIcons/ic_close_16.png') no-repeat center;
+}
+
+.icon-delete {
+    background: url('../../assets/ImagesIcons/ic_Delete_32.svg') no-repeat center;
+}
+
+.icon-edit {
+    background: url('../../assets/ImagesIcons/ic_Edit.svg') no-repeat center;
+}
+
+.icon-duplicate {
+    background: url('../../assets/ImagesIcons/ic_Duplicate_24.svg') no-repeat center;
+}
+
+.icon-home {
+    background: url('../../assets/ImagesIcons/home.svg') no-repeat center;
+}
+
+.icon-i {
+    background: url('../../assets/ImagesIcons/ic_Info_20.svg') no-repeat center;
+}
+
+.icon-checkbox-inactive {
+    background: url('../../assets/ImagesIcons/ic_Checkbox_Inactive.svg') no-repeat center;
+}
+
+.icon-checkbox-active {
+    background: url('../../assets/ImagesIcons/ic_Checkbox_Active.svg') no-repeat center;
+}
+
+.icon-check {
+    background: url('../../assets/ImagesIcons/ic_Check.png') no-repeat center;
+}

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MISA.EMIS.MF734.PVTHANG.Common\MISA.EMIS.MF734.PVTHANG.Common.csproj" />
+    <ProjectReference Include="..\MISA.EMIS.MF734.PVTHANG.DataLayer\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj" />
+  </ItemGroup>
+
+</Project>
