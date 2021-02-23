@@ -119,7 +119,7 @@
                             <label for="IsRequire"><span></span>Khoản thu bắt buộc</label>
                         </div>
                         <div class="m-flex-1">
-                            <input type="checkbox" id="IsInternal" v-model="fee.IsInternal"/>
+                            <input type="checkbox" id="IsInternal" v-model="fee.IsInternal" :disabled="mode === 'ADD'"/>
                             <label for="IsInternal"><span></span>Cho phép hoàn trả</label>
                         </div>
                     </div>
@@ -135,8 +135,8 @@
                     </div>
                     <div class="row m-flex">
                         <div class="m-flex-1">
-                            <input type="checkbox" />
-                            <label>Phân loại đăng ký</label>
+                            <input type="checkbox" id="register-type" disabled/>
+                            <label for="register-type"><span class="m-switch-input"></span>Phân loại đăng ký</label>
                         </div>
                     </div>
                 </div>

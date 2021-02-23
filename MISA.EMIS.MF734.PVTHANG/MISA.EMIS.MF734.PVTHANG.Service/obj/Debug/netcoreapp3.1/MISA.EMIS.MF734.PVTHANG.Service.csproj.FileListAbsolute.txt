@@ -40,3 +40,17 @@ C:\Users\phamt\source\repos\MerryChristmas\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF7
 C:\Users\phamt\source\repos\MerryChristmas\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\bin\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Common.pdb
 C:\Users\phamt\source\repos\MerryChristmas\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\bin\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.DataLayer.pdb
 C:\Users\phamt\source\repos\MerryChristmas\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\obj\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Service.csproj.CopyComplete
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\bin\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Service.deps.json
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\bin\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Service.dll
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\bin\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Service.pdb
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\bin\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Common.dll
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\bin\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.DataLayer.dll
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\bin\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Common.pdb
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\bin\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.DataLayer.pdb
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\obj\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Service.csprojAssemblyReference.cache
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\obj\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Service.AssemblyInfoInputs.cache
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\obj\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Service.AssemblyInfo.cs
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\obj\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Service.csproj.CoreCompileInputs.cache
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\obj\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Service.csproj.CopyComplete
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\obj\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Service.dll
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Service\obj\Debug\netcoreapp3.1\MISA.EMIS.MF734.PVTHANG.Service.pdb

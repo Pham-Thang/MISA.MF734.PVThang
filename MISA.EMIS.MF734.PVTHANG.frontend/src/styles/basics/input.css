@@ -41,12 +41,29 @@ input[type="checkbox"] {
         background-image: url('../../assets/ImagesIcons/ic_Checkbox_Active.svg');
     }
 
+    input[type="checkbox"]:disabled + label {
+        opacity: 0.6;
+    }
+
+    input[type="checkbox"]:disabled + label span{
+        opacity: 0.6;
+    }
+
     input[type="checkbox"] + label span.convert{
         background-image: url('../../assets/ImagesIcons/ic_Checkbox_Active.svg');
     }
 
     input[type="checkbox"]:checked + label span.convert{
         background-image: url('../../assets/ImagesIcons/ic_Checkbox_Inactive.svg');
+    }
+    
+    input[type="checkbox"] + label span.m-switch-input{
+        width: 28px;
+        background: url('../../assets/ImagesIcons/ic_Switch_Inactive.svg') no-repeat center;
+    }
+
+    input[type="checkbox"]:checked + label span.m-switch-input{
+        background: url('../../assets/ImagesIcons/ic_Switch_Inactive.svg') no-repeat center;
     }
 
 input[type="radio"] {

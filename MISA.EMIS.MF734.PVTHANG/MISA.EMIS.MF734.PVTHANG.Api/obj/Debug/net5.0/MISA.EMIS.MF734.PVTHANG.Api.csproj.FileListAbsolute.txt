@@ -121,3 +121,4 @@ C:\Users\phamt\source\repos\MerryChristmas\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF7
 C:\Users\phamt\source\repos\MerryChristmas\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Api\obj\Debug\net5.0\MISA.EMIS.MF734.PVTHANG.Api.RazorTargetAssemblyInfo.cache
 C:\Users\phamt\source\repos\MerryChristmas\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Api\obj\Debug\net5.0\MISA.EMIS.MF734.PVTHANG.Api.csproj.CopyComplete
 C:\Users\phamt\source\repos\MerryChristmas\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Api\obj\Debug\net5.0\MISA.EMIS.MF734.PVTHANG.Api.genruntimeconfig.cache
+C:\Users\pvthang\Documents\MISA.MF734.PVThang\MISA.EMIS.MF734.PVTHANG\MISA.EMIS.MF734.PVTHANG.Api\obj\Debug\net5.0\MISA.EMIS.MF734.PVTHANG.Api.pdb
