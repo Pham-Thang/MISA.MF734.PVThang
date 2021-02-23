@@ -275,6 +275,7 @@ export default {
                 }
             }
             if (flag && this.mode === 'ADD') {
+                this.fee.FeeID = null;
                 axios.post('http://localhost:60931/api/v1/Fees', this.fee)
                 .then(res => {
                     console.log(res.data);
@@ -301,8 +302,8 @@ export default {
                         this.$refs.FeeName.focus();
                     }
                 })
-                .catch(res => {
-                    console.log(res);
+                .catch((err) => {
+                    alert(err);
                 })
             } else if (flag && this.mode === 'EDIT') {
                 axios.put('http://localhost:60931/api/v1/Fees', this.fee)
@@ -312,7 +313,7 @@ export default {
                     this.close();
                 })
                 .catch((err) => {
-                    alert(err.respone.date.userMessage);
+                    alert(err);
                 })
             }
         }
