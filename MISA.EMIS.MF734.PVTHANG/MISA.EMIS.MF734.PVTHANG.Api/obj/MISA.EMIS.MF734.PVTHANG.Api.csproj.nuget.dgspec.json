@@ -13,9 +13,13 @@
         "packagesPath": "C:\\Users\\pvthang\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\pvthang\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -25,7 +29,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net50": {
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
               "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj": {
                 "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj"
@@ -46,7 +51,8 @@
         }
       },
       "frameworks": {
-        "net50": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -75,12 +81,25 @@
               "version": "[5.6.3, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win7-x86": {
-          "#import": []
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -93,9 +112,13 @@
         "packagesPath": "C:\\Users\\pvthang\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\pvthang\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -106,6 +129,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -117,6 +141,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -132,7 +157,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -145,9 +170,13 @@
         "packagesPath": "C:\\Users\\pvthang\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\pvthang\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -158,6 +187,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
               "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj": {
                 "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj"
@@ -173,6 +203,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Dapper": {
               "target": "Package",
@@ -198,7 +229,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -211,9 +242,13 @@
         "packagesPath": "C:\\Users\\pvthang\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\pvthang\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -224,6 +259,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
               "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj": {
                 "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj"
@@ -242,6 +278,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -257,7 +294,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

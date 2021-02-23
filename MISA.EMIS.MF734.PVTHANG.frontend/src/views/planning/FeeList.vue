@@ -15,7 +15,7 @@
                 <button class="m-icon-button icon-delete" @click="btnDeleteOnClick_n" :disabled="!haveRowOnSelect"></button>
             </div>
             <div class="option__item float--right">
-                <button class="m-second-button">Sắp lại thứ tự</button>
+                <button class="m-second-button" @click="loadData">Sắp lại thứ tự</button>
             </div>
             <div class="option__item float--right">
                 <button class="m-button" @click="btnAddOnClick">Thêm mới</button>
@@ -34,8 +34,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(fee, index) in listFee" :key="index" 
-                        v-show="fee.IsActive || showFeeInactive"
+                    <tr v-for="(fee, index) in listFee.filter((_fee) => {
+                            return (_fee.IsActive || showFeeInactive);
+                        })" :key="index" 
                         :class="{'odd-row': index%2 === 1, 'row-on-select': feeIds[fee.FeeID] === true}">
                         <td class="selectCol">
                             <input type="checkbox" :id="fee.FeeID" v-model="feeIds[fee.FeeID]"/>
@@ -209,9 +210,29 @@ export default {
             axios.get('http://localhost:60931/api/v1/Fees')
                 .then(res => {
                     this.listFee = res.data;
+                    for (let feeId in this.feeIds) {
+                        if (this.listFee.filter((fee) => {
+                            return fee.FeeID == feeId;
+                        }).length == 0) {
+                            this.feeIds[feeId] = false;
+                        }
+                    }
                 })
                 .catch(res => {
-                    alert(res);
+                    console.log(res);
+                    // this.listFee = [
+                    //     {FeeID: 1},
+                    //     {FeeID: 2, IsActive: true},
+                    //     {FeeID: 3},
+                    //     {FeeID: 4, IsActive: true},
+                    //     {FeeID: 5},
+                    //     {FeeID: 6},
+                    // ]
+                    this.feeIds = this.feeIds.filter((feeId) => {
+                        return this.listFee.filter((fee) => {
+                            return fee.FeeID == feeId;
+                        }).length > 0;
+                    })
                 })
             axios.get('http://localhost:60931/api/v1/FeeGroups')
                 .then(res => {

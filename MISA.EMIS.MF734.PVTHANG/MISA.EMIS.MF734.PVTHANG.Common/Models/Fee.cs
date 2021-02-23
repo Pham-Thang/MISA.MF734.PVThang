@@ -21,7 +21,7 @@ namespace MISA.EMIS.MF734.PVTHANG.Common.Models
 
         [Required("Phạm vi thu")]
         public String ApplyObject { get; set; }
-        public int Property { get; set; }
+        public int? Property { get; set; }
 
         [Required("Kỳ thu")]
         public int Period { get; set; }

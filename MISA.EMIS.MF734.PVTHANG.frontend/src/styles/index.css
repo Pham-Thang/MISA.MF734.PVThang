@@ -34,8 +34,3 @@ body {
     font-family: 'OpenSans-Regular';
     src: url('../assets/Fonts/OpenSans-Regular.ttf');
 }
-
-@font-face {
-    font-family: 'OpenSans-Bold';
-    src: url('../assets/Fonts/OpenSans-Semibold.ttf');
-}

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MISA.EMIS.MF734.PVTHANG.Common.Models;
 using MISA.EMIS.MF734.PVTHANG.DataLayer.Classes;
 using MISA.EMIS.MF734.PVTHANG.DataLayer.Interfaces;
 using MISA.EMIS.MF734.PVTHANG.Service.Classes;
@@ -67,17 +68,18 @@ namespace MISA.EMIS.MF734.PVTHANG.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MISA.EMIS.MF734.PVTHANG.Api v1"));
             }
 
-            //
+            //Xử lý ngoại lệ
             app.UseExceptionHandler(a => a.Run(async context =>
             {
                 var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
                 var exception = exceptionHandlerPathFeature.Error;
 
-                var devMsg = exception.Message;
-                var userMsg = Common.Properties.Resources.ErrorException;
-
-                //await context.Response.WriteAsJsonAsync(new { error = exception.Message });
-                await context.Response.WriteAsJsonAsync(new { DevMsg = devMsg, UserMsg = userMsg });
+                var _serviceResult = new ServiceResult();
+                _serviceResult.Success = false;
+                _serviceResult.Code = Common.Enum.ResultCode.Exception;
+                _serviceResult.ErrorMessage.DevMessage = exception.Message;
+                _serviceResult.ErrorMessage.UserMessage = Common.Properties.Resources.ErrorException;
+                await context.Response.WriteAsJsonAsync(_serviceResult);
             }));
 
             app.UseRouting();
