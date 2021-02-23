@@ -60,7 +60,7 @@ export default {
         height: 20px;
         margin-left: 8px;
         margin-right: 12px;
-        background: url('../assets/ImagesIcons/ic_sprites2.png') no-repeat -911px -47px;
+        background: url('../../assets/ImagesIcons/ic_sprites2.png') no-repeat -911px -47px;
     }
 
     .item .account {

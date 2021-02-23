@@ -388,7 +388,7 @@ export default {
 
         .table table {
             width: 100%;
-            min-width: 1700px;
+            min-width: 1600px;
             height: 100%;
             border-collapse: collapse;
             border: 1px solid #e9e9e9;
@@ -455,6 +455,7 @@ export default {
             }
 
             .table table .fee-name {
+                line-height: 20px;
                 color: #0997eb;
                 cursor: pointer;
                 widows: auto;
@@ -468,7 +469,7 @@ export default {
             }
 
             .table table .FeeName {
-                width: 300px;
+                width: 25%;
             }
 
             .table table .icon-checkbox {

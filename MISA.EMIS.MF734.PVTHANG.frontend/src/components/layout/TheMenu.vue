@@ -78,7 +78,7 @@ export default {
     .menu__logo .logo {
         width: 34px;
         height: 34px;
-        background: url('../assets/ImagesIcons/ic_KhoanThu_56.svg') no-repeat center;
+        background: url('../../assets/ImagesIcons/ic_KhoanThu_56.svg') no-repeat center;
         margin-left: 12px;
         margin-right: 8px;
     }
@@ -93,7 +93,7 @@ export default {
     .menu__logo .icon--bar {
         width: 26px;
         height: 26px;
-        background: url('../assets/ImagesIcons/ic_sprites2.png') no-repeat 3px 3px;
+        background: url('../../assets/ImagesIcons/ic_sprites2.png') no-repeat 3px 3px;
         margin-right: 12px;
         margin-left: 8px;
     }
