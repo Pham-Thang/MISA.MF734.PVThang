@@ -260,7 +260,6 @@ export default {
         },
         validateData(key) {
             if (this.validate[key].Require == true && (this.fee[key] === null || this.fee[key] === "")) {
-                console.log(key);
                 this.validate[key].Status = false;
                 this.validate[key].message = "Bạn phải nhập thông tin này."
             } else {
@@ -312,8 +311,8 @@ export default {
                     this.reload();
                     this.close();
                 })
-                .catch(res => {
-                    alert(res);
+                .catch((err) => {
+                    alert(err.respone.date.userMessage);
                 })
             }
         }
