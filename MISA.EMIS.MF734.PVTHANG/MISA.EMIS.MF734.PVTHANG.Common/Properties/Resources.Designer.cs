@@ -70,6 +70,15 @@ namespace MISA.EMIS.MF734.PVTHANG.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Không được xóa dữ liệu hệ thống..
+        /// </summary>
+        public static string ErrorDeleteSystem {
+            get {
+                return ResourceManager.GetString("ErrorDeleteSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to đã tồn tại.
         /// </summary>
         public static string ErrorDuplicate {

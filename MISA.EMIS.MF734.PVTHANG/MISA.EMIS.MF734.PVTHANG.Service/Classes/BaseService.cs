@@ -114,7 +114,7 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
             {
                 _serviceResult.Success = false;
                 _serviceResult.Code = Common.Enum.ResultCode.BadRequest;
-                _serviceResult.ErrorMessage.UserMessage = "Không thể xóa dữ liệu hệ thống!";
+                _serviceResult.ErrorMessage.UserMessage = Common.Properties.Resources.ErrorDeleteSystem;
             } else
             {
                 sqlCommand = $"DELETE FROM {_className} WHERE {_className}Id = '{id}'";

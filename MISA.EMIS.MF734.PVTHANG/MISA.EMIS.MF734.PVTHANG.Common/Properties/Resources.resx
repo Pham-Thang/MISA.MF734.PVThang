@@ -120,6 +120,9 @@
   <data name="Error" xml:space="preserve">
     <value>Có lỗi xảy ra, vui lòng thử lại!</value>
   </data>
+  <data name="ErrorDeleteSystem" xml:space="preserve">
+    <value>Không được xóa dữ liệu hệ thống.</value>
+  </data>
   <data name="ErrorDuplicate" xml:space="preserve">
     <value>đã tồn tại</value>
   </data>

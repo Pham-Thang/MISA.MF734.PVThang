@@ -42,8 +42,8 @@ export default {
                         console.log(res.data);
                         this.$emit('reloadData');
                     })
-                    .catch(res => {
-                        alert(res);
+                    .catch(err => {
+                        alert(err.response.data.UserMessage);
                     })
             }
             this.$emit('close');

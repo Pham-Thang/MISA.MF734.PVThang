@@ -303,7 +303,7 @@ export default {
                     }
                 })
                 .catch((err) => {
-                    alert(err);
+                    alert(err.response.data.UserMessage);
                 })
             } else if (flag && this.mode === 'EDIT') {
                 axios.put('http://localhost:60931/api/v1/Fees', this.fee)
@@ -313,7 +313,7 @@ export default {
                     this.close();
                 })
                 .catch((err) => {
-                    alert(err);
+                    alert(err.response.data.UserMessage);
                 })
             }
         }
@@ -325,8 +325,8 @@ export default {
                 .then(res => {
                     this.fee = res.data;
                 })
-                .catch(res => {
-                    alert(res);
+                .catch(err => {
+                    alert(err.response.data.UserMessage);
                 })
         }
     }
