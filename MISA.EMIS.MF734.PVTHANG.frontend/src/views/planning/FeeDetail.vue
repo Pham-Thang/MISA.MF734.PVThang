@@ -14,7 +14,7 @@
                             <input type="text" v-focus size="100"
                                 @blur="validateData('FeeName')" 
                                 :class="{'m-input': true, 'error-required': !validate.FeeName.Status}"
-                                :title="validate.FeeName.Status? null:'Bạn phải nhập thông tin này!'"
+                                :title="validate.FeeName.Status? null:validate.FeeName.message"
                                 v-model="fee.FeeName"/>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                                     v-model="fee.Price"
                                     @blur="validateData('Price')" 
                                     :class="{'m-input': true, 'error-required': !validate.Price.Status, 'm-text-right': true}"
-                                    :title="validate.Price.Status? null:'Bạn phải nhập thông tin này!'" /> 
+                                    :title="validate.Price.Status? null:validate.Price.message" /> 
                                 <label>đ/</label>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                                 <select name="unit" v-model="fee.Unit"
                                     @blur="validateData('Unit')" 
                                     :class="{'m-select': true, 'error-required': !validate.Unit.Status}"
-                                    :title="validate.Unit.Status? null:'Bạn phải nhập thông tin này!'">
+                                    :title="validate.Unit.Status? null:validate.Unit.message">
                                     <option value="1">Ngày</option>
                                     <option value="2">Tuần</option>
                                     <option value="3">Tháng</option>
@@ -63,7 +63,7 @@
                                 v-model="fee.ApplyObject"
                                 @blur="validateData('ApplyObject')" 
                                 :class="{'m-select': true, 'error-required': !validate.ApplyObject.Status}"
-                                :title="validate.ApplyObject.Status? null:'Bạn phải nhập thông tin này!'">
+                                :title="validate.ApplyObject.Status? null:validate.ApplyObject.message">
                                 <option value="Cá nhân">Cá nhân</option>
                                 <option value="Lớp">Lớp</option>
                                 <option value="Khối">Khối</option>
@@ -170,9 +170,9 @@ export default {
                 FeeGroupID: null,
                 Price: null,
                 Unit: 2,
-                ApplyObject: 3,
+                ApplyObject: "Toàn trường",
                 Property: null,
-                Period: "1",
+                Period: 1,
                 IsApplyRemisson: false,
                 IsRequire: false,
                 AllowCreateInvoice: true,
@@ -185,50 +185,62 @@ export default {
                 FeeName: {
                     Status: true,
                     Require: true,
+                    message: ""
                 },
                 Price: {
                     Status: true,
                     Require: true,
+                    message: ""
                 },
                 Unit: {
                     Status: true,
                     Require: true,
+                    message: ""
                 },
                 ApplyObject: {
                     Status: true,
                     Require: true,
+                    message: ""
                 },
                 Period: {
                     Status: true,
                     Require: true,
+                    message: ""
                 },
                 IsApplyRemisson: {
                     Status: true,
                     Require: true,
+                    message: ""
                 },
                 IsRequire: {
                     Status: true,
                     Require: true,
+                    message: ""
                 },
                 AllowCreateInvoice: {
                     Status: true,
                     Require: true,
+                    message: ""
                 },
                 AllowCreateReceipt: {
                     Status: true,
                     Require: true,
+                    message: ""
                 },
                 IsActive: {
                     Status: true,
                     Require: true,
+                    message: ""
                 },
                 IsInternal: {
                     Status: true,
                     Require: true,
+                    message: ""
                 },
                 IsSystem: {
                     Status: true,
                     Require: true,
+                    message: ""
                 }
             }
         }
@@ -247,7 +259,9 @@ export default {
         },
         validateData(key) {
             if (this.validate[key].Require == true && (this.fee[key] === null || this.fee[key] === "")) {
+                console.log(key);
                 this.validate[key].Status = false;
+                this.validate[key].message = "Bạn phải nhập thông tin này."
             } else {
                 this.validate[key].Status = true;
             }
@@ -258,7 +272,6 @@ export default {
                 this.validateData(key);
                 if (this.validate[key].Status === false) {
                     flag = false;
-                    break;
                 }
             }
             if (flag && this.mode === 'ADD') {
@@ -266,7 +279,26 @@ export default {
                 .then(res => {
                     console.log(res.data);
                     this.reload();
-                    if (close) this.close();
+                    if (close) {
+                        this.close();
+                    } else {
+                        this.fee = {
+                            FeeName: "",
+                            FeeGroupID: null,
+                            Price: null,
+                            Unit: 2,
+                            ApplyObject: "Toàn trường",
+                            Property: null,
+                            Period: 1,
+                            IsApplyRemisson: false,
+                            IsRequire: false,
+                            AllowCreateInvoice: true,
+                            AllowCreateReceipt: true,
+                            IsActive: true,
+                            IsInternal: false,
+                            IsSystem: false
+                        }
+                    }
                 })
                 .catch(res => {
                     console.log(res);
