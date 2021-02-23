@@ -11,8 +11,9 @@
                     <div class="row">
                         <div class="text">Tên khoản thu <span class="m-red">*</span></div>
                         <div class="input">
-                            <input type="text" v-focus size="100"
+                            <input type="text" size="100"
                                 @blur="validateData('FeeName')" 
+                                ref="FeeName"
                                 :class="{'m-input': true, 'error-required': !validate.FeeName.Status}"
                                 :title="validate.FeeName.Status? null:validate.FeeName.message"
                                 v-model="fee.FeeName"/>
@@ -298,6 +299,7 @@ export default {
                             IsInternal: false,
                             IsSystem: false
                         }
+                        this.$refs.FeeName.focus();
                     }
                 })
                 .catch(res => {
@@ -316,14 +318,8 @@ export default {
             }
         }
     },
-    directives: {
-        focus: {
-            inserted: function (el) {
-                el.focus()
-            }
-        }
-    },
     mounted() {
+        this.$refs.FeeName.focus();
         if (this.feeId !== null) {
             axios.get('http://localhost:60931/api/v1/Fees/' + this.feeId)
                 .then(res => {
