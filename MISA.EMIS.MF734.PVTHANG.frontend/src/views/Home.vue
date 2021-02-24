@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        Click vào Lập kế hoạch thu để tiếp tục
+        <router-link to="/planning-fee">Click me!</router-link>
     </div>
 </template>
 <script>
@@ -15,5 +15,6 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 24px;
 }
 </style>

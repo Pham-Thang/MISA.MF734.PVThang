@@ -14,12 +14,23 @@ namespace MISA.EMIS.MF734.PVTHANG.Api.Controllers
     [ApiController]
     public class BaseEntityController<TEntity> : ControllerBase
     {
+        #region Declare
         IBaseService<TEntity> _baseService;
+        #endregion
+
+        #region Constructor
         public BaseEntityController(IBaseService<TEntity> baseService)
         {
             _baseService = baseService;
         }
+        #endregion
 
+        #region Method
+        /// <summary>
+        /// Lấy dữ liệu
+        /// </summary>
+        /// <returns>IActionResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         [HttpGet]
         public IActionResult Get()
         {
@@ -30,6 +41,12 @@ namespace MISA.EMIS.MF734.PVTHANG.Api.Controllers
                 return StatusCode((int)result.Code, result.ErrorMessage);
         }
 
+        /// <summary>
+        /// Lấy dữ liệu theo id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>IActionResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -40,6 +57,12 @@ namespace MISA.EMIS.MF734.PVTHANG.Api.Controllers
                 return StatusCode((int)result.Code, result.ErrorMessage);
         }
 
+        /// <summary>
+        /// Thêm dữ liệu
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>IActionResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         [HttpPost]
         public IActionResult Post([FromBody] TEntity entity)
         {
@@ -50,6 +73,12 @@ namespace MISA.EMIS.MF734.PVTHANG.Api.Controllers
                 return StatusCode((int)result.Code, result.ErrorMessage);
         }
 
+        /// <summary>
+        /// Sửa dữ liệu
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>IActionResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         [HttpPut]
         public IActionResult Put([FromBody] TEntity entity)
         {
@@ -60,6 +89,11 @@ namespace MISA.EMIS.MF734.PVTHANG.Api.Controllers
                 return StatusCode((int)result.Code, result.ErrorMessage);
         }
 
+        /// <summary>
+        /// Xóa dữ liệu
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -69,5 +103,6 @@ namespace MISA.EMIS.MF734.PVTHANG.Api.Controllers
             else
                 return StatusCode((int)result.Code, result.ErrorMessage);
         }
+        #endregion
     }
 }

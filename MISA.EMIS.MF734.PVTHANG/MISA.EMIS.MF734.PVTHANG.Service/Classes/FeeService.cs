@@ -9,16 +9,19 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
 {
     public class FeeService : BaseService<Fee>, IFeeService
     {
+        #region Constructor
         public FeeService(IFeeConnector feeConnector) : base(feeConnector)
         {
 
         }
+        #endregion
 
+        #region Method
         /// <summary>
         /// Lấy tất cả Fee
         /// </summary>
-        /// <returns></returns>
-        /// Created by Phạm Việt Thắng
+        /// <returns>ServiceResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public override ServiceResult GetAll()
         {
             var sqlCommand = "Proc_GetAllFees";
@@ -30,13 +33,14 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
         /// Lấy Fee theo id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
-        /// Created by Phạm Việt Thắng
+        /// <returns>ServiceResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public override ServiceResult GetById(int id)
         {
             var sqlCommand = "Proc_GetFeeById";
             _serviceResult.Data = _dbConnector.GetFirst<Fee>(sqlCommand, new { id = id }, System.Data.CommandType.StoredProcedure);
             return _serviceResult;
         }
+        #endregion
     }
 }

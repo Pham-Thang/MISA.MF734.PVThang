@@ -1,14 +1,14 @@
 <template>
     <div id="content">
-        <FeeList />
+        <router-view></router-view>
     </div>
 </template>
 <script>
-import FeeList from '../../views/planning/FeeList'
+// import FeeList from '../../views/planning/FeeList'
 
 export default {
     components: {
-        FeeList
+        
     }
 }
 </script>

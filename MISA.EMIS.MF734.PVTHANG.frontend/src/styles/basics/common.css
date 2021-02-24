@@ -1,3 +1,5 @@
+/* created by Phạm Việt Thắng (20/02/2021) */
+
 .float--left {
     float: left;
 }
@@ -34,11 +36,11 @@
     background-image: url('../../assets/ImagesIcons/ic_TongQuan_32.svg');
 }
 
-.icon-planning-fees {
+.icon-planning-fee {
     background-image: url('../../assets/ImagesIcons/ic_LapKeHoachThu_32.svg');
 }
 
-.icon-manage-fees {
+.icon-manage-fee {
     background-image: url('../../assets/ImagesIcons/ic_QuanLyThu_32.svg');
 }
 
@@ -104,4 +106,8 @@
 
 .icon-check {
     background: url('../../assets/ImagesIcons/ic_Check.png') no-repeat center;
+}
+
+.icon-loading {
+    background: url('../../assets/ImagesIcons/messenger-typing-preloader.svg') no-repeat center;
 }

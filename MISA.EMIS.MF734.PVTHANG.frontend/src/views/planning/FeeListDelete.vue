@@ -32,9 +32,13 @@ export default {
         mode: String
     },
     methods: {
+        //Đóng dialog 
+        //Created by Phạm Việt Thắng (20/02/2021)
         close() {
             this.$emit('close');
         },
+        //Xóa khoản thu
+        //Created by Phạm Việt Thắng (20/02/2021)
         async deleteFee() {
             for (let i in this.listFeeId) {
                 await axios.delete('http://localhost:60931/api/v1/Fees/' + this.listFeeId[i])

@@ -13,9 +13,11 @@ namespace MISA.EMIS.MF734.PVTHANG.Api.Controllers
    
     public class FeeGroupsController : BaseEntityController<FeeGroup>
     {
-      public FeeGroupsController(IFeeGroupService feeGroupService) : base (feeGroupService)
+        #region Constructor
+        public FeeGroupsController(IFeeGroupService feeGroupService) : base (feeGroupService)
         {
 
         }
+        #endregion
     }
 }

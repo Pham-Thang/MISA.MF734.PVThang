@@ -10,17 +10,20 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
     public class FeeGroupService : BaseService<FeeGroup>, IFeeGroupService
     {
 
+        #region Constructor
         public FeeGroupService(IFeeGroupConnector feeGroupConnector) : base(feeGroupConnector)
         {
 
         }
+        #endregion
 
+        #region Method
         /// <summary>
         /// Thêm FeeGroup (Chưa được phát triển)
         /// </summary>
         /// <param name="entity"></param>
-        /// <returns></returns>
-        /// Created by Phạm Việt Thắng
+        /// <returns>ServiceResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public override ServiceResult Insert(FeeGroup entity)
         {
             _serviceResult.Success = false;
@@ -33,8 +36,8 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
         /// Sửa FeeGroup (Chưa được phát triển)
         /// </summary>
         /// <param name="entity"></param>
-        /// <returns></returns>
-        /// Created by Phạm Việt Thắng
+        /// <returns>ServiceResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public override ServiceResult Update(FeeGroup entity)
         {
             _serviceResult.Success = false;
@@ -47,8 +50,8 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
         /// Xóa FeeGroup (Chưa được phát triển)
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
-        /// Created by Phạm Việt Thắng
+        /// <returns>ServiceResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public override ServiceResult Delete(int id)
         {
             _serviceResult.Success = false;
@@ -56,5 +59,6 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
             _serviceResult.ErrorMessage.UserMessage = Common.Properties.Resources.UnDeveloped;
             return _serviceResult;
         }
+        #endregion
     }
 }

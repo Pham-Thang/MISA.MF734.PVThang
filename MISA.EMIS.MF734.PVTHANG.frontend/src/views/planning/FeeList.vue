@@ -21,30 +21,33 @@
                 <button class="m-button" @click="btnAddOnClick">Thêm mới</button>
             </div>
         </div>
+        <div v-if="isLoading" class="loading icon-loading">
+            
+        </div>
         <div class="table">
             <table>
                 <thead>
                     <tr class="odd-row">
-                        <th class="selectCol">
+                        <th class="select-col">
                             <!-- <input type="checkbox" id="0" v-model="selectAllRows"/>
                             <label for="0"><span></span></label> -->
                         </th>
-                        <th v-for="col in cols" :key="col.key" :class="col.key">{{col.title}}</th>
-                        <th class="optionCol"></th>
+                        <th v-for="col in listCol" :key="col.key" :class="col.key">{{col.title}}</th>
+                        <th class="option-col"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody v-if="!isLoading">
                     <tr v-for="(fee, index) in listFee.filter((_fee) => {
                             return (_fee.IsActive || showFeeInactive);
                         })" :key="index" 
                         :class="{'odd-row': index%2 === 1, 'row-on-select': feeIds[fee.FeeID] === true}">
-                        <td class="selectCol">
+                        <td class="select-col">
                             <input type="checkbox" :id="fee.FeeID" v-model="feeIds[fee.FeeID]"/>
                             <label :for="fee.FeeID"><span></span></label>
                         </td>
-                        <td v-for="col in cols" :key="col.key" :class="col.key">
+                        <td v-for="col in listCol" :key="col.key" :class="col.key">
                             <span v-if="col.key === 'FeeName'" class="m-flex">
-                                <span @click="btnEditOnClick(fee.FeeID)" class="fee-name">{{fee[col.key]}}</span>
+                                <span @click="btnEditOnClick(fee.FeeID)" class="text-FeeName">{{fee[col.key]}}</span>
                                 <span v-if="fee.IsSystem" class="icon-i" title="Đây là khoản thu mặc định của hệ thống, bạn không thể xóa."></span>
                             </span>
                             <div v-else-if="col.key === 'Price'" class="m-text-right">
@@ -58,7 +61,7 @@
                             </div>
                             <span v-else-if="col.key !== 'FeeName'">{{fee[col.key]}}</span>
                         </td>
-                        <td class="optionCol">
+                        <td class="option-col">
                             <div class="m-flex">
                                 <div class="icon icon-edit" @click="btnEditOnClick(fee.FeeID)"></div>
                                 <div class="icon icon-duplicate" @click="btnDuplicateOnClick(fee.FeeID)"></div>
@@ -70,19 +73,20 @@
             </table>
         </div>
         <div class="footer">Tổng số: {{listFee.length}} kết quả</div>
-        <FeeDetail v-if="formDetail" @close="closeForm" :mode="formMode" :listFeeGroup="listFeeGroup" :feeId="feeIdChange" @reloadData="loadData"/>
-        <DialogDelete v-if="dialogDelete" @close="dialogDelete = false" @reloadData="loadData" :message="messageDelete" :mode="formMode" :listFeeId="listFeeIdDelete"/>
+        <FeeListDetail v-if="formDetail" @close="closeForm" :mode="formMode" :listFeeGroup="listFeeGroup" :feeId="feeIdChange" @reloadData="loadData"/>
+        <FeeListDelete v-if="dialogDelete" @close="dialogDelete = false" @reloadData="loadData" :message="messageDelete" :mode="formMode" :listFeeId="listFeeIdDelete"/>
     </div>
 </template>
 <script>
-import FeeDetail from './FeeDetail'
-import DialogDelete from './DialogDelete.vue'
+import FeeListDetail from './FeeListDetail'
+import FeeListDelete from './FeeListDelete'
 import axios from 'axios'
 
 export default {
     data() {
         return {
-            cols: [
+            //danh sách thông tin được hiển thị trên bảng
+            listCol: [
                 {
                     key: "FeeName",
                     title: "Tên khoản thu"
@@ -128,42 +132,69 @@ export default {
                     title: "Đang theo dõi"
                 }
             ],
+            //danh sách khoản thu
             listFee: [],
+            //danh sách nhóm khoản thu
             listFeeGroup: [],
+            //Đối tượng quản lý các khoản thu được chọn
             feeIds: {},
+            //trạng thái đóng/mở của FeeListDetail
             formDetail: false,
+            //Trạng thái đóng/mở của FeeListDelete
             dialogDelete: false,
+            //cách thức hoạt động của các dialog: ADD - Thêm mới, EDIT - Sửa, DELETE - Xóa, NOTIFICATION - Thông báo
             formMode: null,
-            selectAllRows: false,
+            //feeId được truyền vào để load dữ liệu trong FeeListDetail
             feeIdChange: null,
+            //Hiển thị các khoản thu ngừng theo dõi
             showFeeInactive: false,
+            //Thông báo trong FeeListDelete
             messageDelete: "",
-            listFeeIdDelete: []
+            //Danh sách feeId truyền vào FeeListDelete để thực hiện xóa
+            listFeeIdDelete: [],
+            //Đang tải dữ liệu vào listFee
+            isLoading: true,
         }
     },
     components: {
-        FeeDetail,
-        DialogDelete
+        FeeListDetail,
+        FeeListDelete
     },
     mounted() {
+        //Lấy danh sách nhóm khoản thu
+        axios.get('http://localhost:60931/api/v1/FeeGroups')
+            .then(res => {
+                this.listFeeGroup = res.data;
+            })
+            .catch(res => {
+                alert(res);
+            })
         this.loadData();
     },
     methods: {
+        //Click vào button thêm mới
+        //Created by Phạm Việt Thắng (20/02/2021)
         btnAddOnClick() {
             this.feeIdChange = null;
             this.formMode = "ADD";
             this.formDetail = true;
         },
+        //Click vào button xóa
+        //Created by Phạm Việt Thắng (20/02/2021)
         btnEditOnClick(FeeID) {
             this.feeIdChange = FeeID;
             this.formMode = "EDIT";
             this.formDetail = true;
         },
+        //Click vào button nhân bản
+        //Created by Phạm Việt Thắng (20/02/2021)
         btnDuplicateOnClick(feeId) {
             this.feeIdChange = feeId;
             this.formMode = "ADD";
             this.formDetail = true;
         },
+        ///Click vào button xóa trong table
+        //Created by Phạm Việt Thắng (20/02/2021)
         btnDeleteOnClick_1(feeId) {
             if (this.listFee.filter((fee) => {
                 return fee.FeeID === feeId;
@@ -178,6 +209,8 @@ export default {
             }
             this.dialogDelete = true;
         },
+        //Click vào button xóa những khoản thu được chọn
+        //Created by Phạm Việt Thắng (20/02/2021)
         btnDeleteOnClick_n() {
             this.listFeeIdDelete = [];
             for (let feeId in this.feeIds) {
@@ -185,7 +218,7 @@ export default {
                     let fee_ = this.listFee.filter((fee) => {
                         return fee.FeeID == feeId;
                     })[0];
-                    if (fee_ && fee_.IsSystem === true) {
+                    if (typeof fee_ !== undefined && fee_ !== null && fee_.IsSystem === true) {
                         this.formMode = "NOTIFICATION";
                         this.messageDelete = "Bạn không thể xóa dữ liệu của hệ thống.";
                         this.dialogDelete = true;
@@ -199,6 +232,7 @@ export default {
             this.messageDelete = "Bạn có chắc chắn muốn xóa những khoản thu đã chọn?";
             this.dialogDelete = true;
         },
+        //Đóng các dialog
         closeForm() {
             this.formMode = null;
             this.formDetail = false;
@@ -206,9 +240,15 @@ export default {
             this.messageDelete = "";
             this.listFeeIdDelete = [];
         },
-        loadData() {
+        //Lấy dữ liệu từ server
+        //Created by Phạm Việt Thắng (20/02/2021)
+        async loadData() {
+            this.isLoading = true;
+            this.listFee = [];
+            //Lấy danh sách khoản thu
             axios.get('http://localhost:60931/api/v1/Fees')
                 .then(res => {
+                    console.log(res.data)
                     this.listFee = res.data;
                     for (let feeId in this.feeIds) {
                         if (this.listFee.filter((fee) => {
@@ -217,31 +257,20 @@ export default {
                             this.feeIds[feeId] = false;
                         }
                     }
+                    this.isLoading = false;
                 })
                 .catch(res => {
                     console.log(res);
-                    // this.listFee = [
-                    //     {FeeID: 1},
-                    //     {FeeID: 2, IsActive: true},
-                    //     {FeeID: 3},
-                    //     {FeeID: 4, IsActive: true},
-                    //     {FeeID: 5},
-                    //     {FeeID: 6},
-                    // ]
                     this.feeIds = this.feeIds.filter((feeId) => {
                         return this.listFee.filter((fee) => {
                             return fee.FeeID == feeId;
                         }).length > 0;
                     })
-                })
-            axios.get('http://localhost:60931/api/v1/FeeGroups')
-                .then(res => {
-                    this.listFeeGroup = res.data;
-                })
-                .catch(res => {
-                    alert(res);
+                    this.isLoading = false;
                 })
         },
+        //Kiểm tra giá trị truyền vào có phải kiểu bool hay không
+        //Created by Phạm Việt Thắng (20/02/2021)
         isBool(val) {
             if (typeof val === typeof true) 
                 return true;
@@ -249,6 +278,7 @@ export default {
         }
     },
     computed: {
+        //Kiểm tra xem có dòng nào đang được chọn hay không
         haveRowOnSelect() {
             for (let feeId in this.feeIds) {
                 if (this.feeIds[feeId] === true) {
@@ -264,6 +294,8 @@ export default {
         },
     },
     filters: {
+        //Format mức thu về dạng fee.Price/fee.Unit
+        //Created by Phạm Việt Thắng (20/02/2021)
         priceRate(fee) {
             var result = "";
             var price = fee.Price;
@@ -297,6 +329,8 @@ export default {
             }
             return result;
         },
+        //Format kỳ thu về dạng text
+        //Created by Phạm Việt Thắng (20/02/2021)
         periodName(fee) {
             switch (fee.Period) {
                 case 1:
@@ -366,6 +400,14 @@ export default {
         margin-left: 0;
     }
 
+.loading{
+    position: absolute;
+    width: 75px;
+    height: 20px;
+    left: calc((100% - 75px) / 2);
+    bottom: calc((100% - 60px) / 2);
+}
+
 .table {
     width: calc(100% - 24px);
     height: calc(100% - 40px - 50px - 50px);
@@ -388,7 +430,7 @@ export default {
 
         .table table {
             width: 100%;
-            min-width: 1600px;
+            min-width: 1672px;
             height: 100%;
             border-collapse: collapse;
             border: 1px solid #e9e9e9;
@@ -407,13 +449,13 @@ export default {
             }
 
                 .table table tbody::-webkit-scrollbar {
-                    width: 6px;
+                    width: 4px;
                     height: 6px;
                     background-color: #E9EBEE;
                 }
 
                 .table table tbody::-webkit-scrollbar-thumb {
-                    width: 6px;
+                    width: 4px;
                     height: 6px;
                     background-color: #bbbbbb;
                 }
@@ -430,16 +472,21 @@ export default {
                 padding: 0 8px 0 8px;
             }
 
-            .table table .selectCol {
+            .table table .select-col {
                 text-align: center;
-                width: 28px;
+                width: 30px;
+                min-width: 30px;
             }
 
-            .table table .optionCol {
+            .table table .option-col {
                 width: 72px;
             }
+/* 
+            .table table th.option-col {
+                width: 78px;
+            } */
 
-                .table table .optionCol .icon {
+                .table table .option-col .icon {
                     width: 20px;
                     height: 20px;
                     cursor: pointer;
@@ -454,11 +501,12 @@ export default {
                 background-color: #cce8ff;
             }
 
-            .table table .fee-name {
+            .table table .text-FeeName {
                 line-height: 20px;
                 color: #0997eb;
                 cursor: pointer;
-                widows: auto;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .table table .icon-i {
@@ -469,7 +517,7 @@ export default {
             }
 
             .table table .FeeName {
-                width: 25%;
+                width: 20%;
             }
 
             .table table .icon-checkbox {
@@ -480,6 +528,7 @@ export default {
             .table table .cell-center {
                 display: flex;
                 justify-content: center;
+                width: 100px;
             }
 
 .footer {

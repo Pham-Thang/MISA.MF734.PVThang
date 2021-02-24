@@ -11,14 +11,24 @@ namespace MISA.EMIS.MF734.PVTHANG.DataLayer.Classes
 {
     public class DatabaseConnector : IDatabaseConnector
     {
+        #region Declare
+        /// <summary>
+        /// Chuỗi chứa thông tin kết nối tới database
+        /// </summary>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         protected String _connectionString;
         protected IDbConnection _dbConnection;
+        #endregion
+
+        #region Constructor
         public DatabaseConnector()
         {
-            _connectionString = "User Id=dev;Password=12345678;Database=MISA.FeeManagement.MF734_PVTHANG;Port=3306;Host=47.241.69.179;Character Set=utf8";
+            _connectionString = Common.Properties.Resources.ConnectionString;
             _dbConnection = new MySqlConnection(_connectionString);
         }
+        #endregion
 
+        #region Method
         /// <summary>
         /// Lấy danh sách dữ liệu
         /// </summary>
@@ -27,7 +37,7 @@ namespace MISA.EMIS.MF734.PVTHANG.DataLayer.Classes
         /// <param name="input"></param>
         /// <param name="type"></param>
         /// <returns>danh sách kiểu dữ liệu TEntity</returns>
-        /// Created by Phạm Việt Thắng
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public virtual IEnumerable<TEntity> GetList<TEntity>(String sqlCommand, Object input, CommandType type = CommandType.StoredProcedure)
         {
             return _dbConnection.Query<TEntity>(sqlCommand, input, commandType: type).ToList();
@@ -41,7 +51,7 @@ namespace MISA.EMIS.MF734.PVTHANG.DataLayer.Classes
         /// <param name="input"></param>
         /// <param name="type"></param>
         /// <returns>TEntity</returns>
-        /// Created by Phạm Việt Thắng
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public virtual TEntity GetFirst<TEntity>(String sqlCommand, Object input, CommandType type = CommandType.StoredProcedure)
         {
             return _dbConnection.Query<TEntity>(sqlCommand, input, commandType: type).FirstOrDefault();
@@ -54,10 +64,11 @@ namespace MISA.EMIS.MF734.PVTHANG.DataLayer.Classes
         /// <param name="input"></param>
         /// <param name="type"></param>
         /// <returns>Số dòng thay đổi</returns>
-        /// Created by Phạm Việt Thắng
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public virtual int Change(String sqlCommand, Object input, CommandType type = CommandType.StoredProcedure)
         {
             return _dbConnection.Execute(sqlCommand, input, commandType: type);
         }
+        #endregion
     }
 }

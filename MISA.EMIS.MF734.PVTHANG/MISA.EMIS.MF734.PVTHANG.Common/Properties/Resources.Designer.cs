@@ -61,6 +61,15 @@ namespace MISA.EMIS.MF734.PVTHANG.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User Id=dev;Password=12345678;Database=MISA.FeeManagement.MF734_PVTHANG;Port=3306;Host=47.241.69.179;Character Set=utf8.
+        /// </summary>
+        public static string ConnectionString {
+            get {
+                return ResourceManager.GetString("ConnectionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Có lỗi xảy ra, vui lòng thử lại!.
         /// </summary>
         public static string Error {

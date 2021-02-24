@@ -166,6 +166,7 @@ import axios from 'axios'
 export default {
     data() {
         return {
+            //Khoản thu được bind trên form
             fee: {
                 FeeName: "",
                 FeeGroupID: null,
@@ -182,6 +183,7 @@ export default {
                 IsInternal: false,
                 IsSystem: false
             },
+            //Quản lý trạng thái validate
             validate: {
                 FeeName: {
                     Status: true,
@@ -252,12 +254,18 @@ export default {
         feeId: Number
     },
     methods: {
+        //Đóng dialog
+        //Created by Phạm Việt Thắng (20/02/2021)
         close() {
             this.$emit('close');
         },
+        //load lại các khoản thu
+        //Created by Phạm Việt Thắng (20/02/2021)
         reload() {
             this.$emit('reloadData');
         },
+        //validate dữ liệu có key là key được truyền vào
+        //Created by Phạm Việt Thắng (20/02/2021)
         validateData(key) {
             if (this.validate[key].Require == true && (this.fee[key] === null || this.fee[key] === "")) {
                 this.validate[key].Status = false;
@@ -266,6 +274,8 @@ export default {
                 this.validate[key].Status = true;
             }
         },
+        //Lưu dữ liệu
+        //Created by Phạm Việt Thắng (20/02/2021)
         saveOnClick(close) {
             var flag = true;
             for (var key in this.validate) {
@@ -321,6 +331,7 @@ export default {
     mounted() {
         this.$refs.FeeName.focus();
         if (this.feeId !== null) {
+            //Lấy khoản thu theo id
             axios.get('http://localhost:60931/api/v1/Fees/' + this.feeId)
                 .then(res => {
                     this.fee = res.data;

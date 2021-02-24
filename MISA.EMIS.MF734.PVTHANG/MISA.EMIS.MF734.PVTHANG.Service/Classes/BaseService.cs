@@ -11,21 +11,35 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
 {
     public class BaseService<TEntity> : IBaseService<TEntity>
     {
+        #region Declare
+        /// <summary>
+        /// Tên của TEntity
+        /// </summary>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         String _className;
+        /// <summary>
+        /// Kết quả trả về cho controller
+        /// </summary>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         protected ServiceResult _serviceResult;
         protected IDatabaseConnector _dbConnector;
+        #endregion
+
+        #region Constructor
         public BaseService(IDatabaseConnector dbConnector)
         {
             _className = typeof(TEntity).Name;
             _serviceResult = new ServiceResult();
             _dbConnector = dbConnector;
         }
+        #endregion
 
+        #region Method
         /// <summary>
         /// Lấy tất cả dữ liệu
         /// </summary>
-        /// <returns></returns>
-        /// Created by Phạm Việt Thắng
+        /// <returns>ServiceResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public virtual ServiceResult GetAll()
         {
             var sqlCommand = $"SELECT * FROM {_className}";
@@ -37,8 +51,8 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
         /// Lấy dữ liệu theo id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
-        /// Created by Phạm Việt Thắng
+        /// <returns>ServiceResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public virtual ServiceResult GetById(int id)
         {
             var sqlCommand = $"SELECT * FROM {_className} WHERE {_className}Id = '{id}'";
@@ -50,8 +64,8 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
         /// Thêm dữ liệu
         /// </summary>
         /// <param name="entity"></param>
-        /// <returns>Đối tượng được thêm</returns>
-        /// Created by Phạm Việt Thắng
+        /// <returns>ServiceResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public virtual ServiceResult Insert(TEntity entity)
         {
             ValidateData(entity);
@@ -77,7 +91,8 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
         /// Sửa dữ liệu
         /// </summary>
         /// <param name="entity">Đối tương sửa</param>
-        /// <returns></returns>
+        /// <returns>ServiceResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public virtual ServiceResult Update(TEntity entity)
         {
             ValidateData(entity); 
@@ -104,8 +119,8 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
         /// Xóa dữ liệu
         /// </summary>
         /// <param name="id">id của đối tượng sẽ bị xóa</param>
-        /// <returns></returns>
-        /// Created by Phạm Việt Thắng
+        /// <returns>ServiceResult</returns>
+        /// Created by Phạm Việt Thắng (22/02/2021)
         public virtual ServiceResult Delete(int id)
         {
             var properties = typeof(TEntity).GetProperties();
@@ -140,7 +155,7 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
         /// Hàm validate dữ liệu
         /// </summary>
         /// <param name="entity"></param>
-        /// Created by Phạm Việt Thắng
+        /// Created by Phạm Việt Thắng (22/02/2021)
         protected virtual void ValidateData(TEntity entity)
         {
             var properties = typeof(TEntity).GetProperties();
@@ -179,8 +194,25 @@ namespace MISA.EMIS.MF734.PVTHANG.Service.Classes
                     }
                 }
                 //check length
-
+                if (property.IsDefined(typeof(CheckLenght), true))
+                {
+                    var propertyName = property.GetCustomAttributes(typeof(CheckLenght), true).FirstOrDefault();
+                    if (value.ToString().Trim().Length > (propertyName as CheckLenght).maxSize)
+                    {
+                        if (propertyName != null)
+                        {
+                            var message = (propertyName as CheckLenght).propertyName + " " + Common.Properties.Resources.ErrorLenght + ". ";
+                            if ((propertyName as CheckLenght).errorMessage != null) message = (propertyName as CheckLenght).errorMessage;
+                            _serviceResult.ErrorMessage.UserMessage = _serviceResult.ErrorMessage.UserMessage == null ? message : (_serviceResult.ErrorMessage.UserMessage + message);
+                        }
+                        _serviceResult.Code = Common.Enum.ResultCode.BadRequest;
+                        _serviceResult.Success = false;
+                    }
+                }
             }
+            if (_serviceResult.ErrorMessage.UserMessage != null) 
+                _serviceResult.ErrorMessage.UserMessage = _serviceResult.ErrorMessage.UserMessage.Trim();
         }
+        #endregion
     }
 }

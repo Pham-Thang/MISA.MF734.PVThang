@@ -6,7 +6,7 @@
             <div class="icon--bar"></div>
         </div>
         <div class="menu__content">
-            <div v-for="item in listItem" :key="item.key" :class="{item: true, 'item--on--select': item.key===current}" >
+            <div v-for="item in listItem" :key="item.key" :class="{item: true, 'item--current': item.key===current}" >
                 <div :class="'item__icon icon-' + item.key"></div>
                 <div class="item__text">{{item.title}}</div>
             </div>
@@ -17,18 +17,18 @@
 export default {
     data() {
         return {
-            current: "planning-fees",
+            current: "planning-fee",
             listItem: [
                 {
                     key: "dashboard",
                     title: "Tổng quan"
                 },
                 {
-                    key: "planning-fees",
+                    key: "planning-fee",
                     title: "Lập kế hoạch thu"
                 },
                 {
-                    key: "manage-fees",
+                    key: "manage-fee",
                     title: "Quản lý thu"
                 },
                 {
@@ -127,14 +127,14 @@ export default {
            margin-right: 8px;
         }
 
-    .menu__content .item.item--on--select {
+    .menu__content .item.item--current {
         background-color: #404F64;
         border-left: 3px solid #0DD469;
         color: #0DD469;
         width: calc(100% - 3px);
     }
 
-        .menu__content .item.item--on--select .item__icon{
+        .menu__content .item.item--current .item__icon{
            margin-left: 9px;
         }
 </style>

@@ -8,6 +8,10 @@ namespace MISA.EMIS.MF734.PVTHANG.Common.Models
     {
     }
 
+    /// <summary>
+    /// Bắt buộc
+    /// </summary>
+    /// Created by Phạm Việt Thắng (22/02/2021)
     [AttributeUsage(AttributeTargets.Property)]
     public class Required : System.Attribute
     {
@@ -20,6 +24,10 @@ namespace MISA.EMIS.MF734.PVTHANG.Common.Models
         }
     }
 
+    /// <summary>
+    /// Không được trùng
+    /// </summary>
+    /// Created by Phạm Việt Thắng (22/02/2021)
     [AttributeUsage(AttributeTargets.Property)]
     public class CheckDuplicate : System.Attribute
     {
@@ -32,17 +40,21 @@ namespace MISA.EMIS.MF734.PVTHANG.Common.Models
         }
     }
 
+    /// <summary>
+    /// Độ dài tối đa
+    /// </summary>
+    /// Created by Phạm Việt Thắng (22/02/2021)
     [AttributeUsage(AttributeTargets.Property)]
     public class CheckLenght : System.Attribute
     {
         public String propertyName;
-        public int max;
+        public int maxSize;
         public String errorMessage;
-        public CheckLenght(String propertyName, int max , String errorMessage = null)
+        public CheckLenght(String propertyName, int maxSize, String errorMessage = null)
         {
             this.propertyName = propertyName;
             this.errorMessage = errorMessage;
-            this.max = max;
+            this.maxSize = maxSize;
         }
     }
 }
