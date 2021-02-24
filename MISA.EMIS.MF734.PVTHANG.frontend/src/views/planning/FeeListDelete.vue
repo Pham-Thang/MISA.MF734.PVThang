@@ -44,12 +44,12 @@ export default {
                 await axios.delete('http://localhost:60931/api/v1/Fees/' + this.listFeeId[i])
                     .then(res => {
                         console.log(res.data);
-                        this.$emit('reloadData');
                     })
                     .catch(err => {
                         alert(err.response.data.UserMessage);
                     })
             }
+            this.$emit('reloadData');
             this.$emit('close');
         }
     },

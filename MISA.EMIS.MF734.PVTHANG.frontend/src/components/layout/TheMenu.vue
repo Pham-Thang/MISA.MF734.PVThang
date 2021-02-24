@@ -17,7 +17,9 @@
 export default {
     data() {
         return {
+            //item đang được chọn
             current: "planning-fee",
+            //Danh sách item
             listItem: [
                 {
                     key: "dashboard",

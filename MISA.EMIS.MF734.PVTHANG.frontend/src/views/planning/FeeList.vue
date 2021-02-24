@@ -38,7 +38,7 @@
                 </thead>
                 <tbody v-if="!isLoading">
                     <tr v-for="(fee, index) in listFee.filter((_fee) => {
-                            return (_fee.IsActive || showFeeInactive);
+                            return ( _fee && (_fee.IsActive || showFeeInactive));
                         })" :key="index" 
                         :class="{'odd-row': index%2 === 1, 'row-on-select': feeIds[fee.FeeID] === true}">
                         <td class="select-col">
@@ -74,7 +74,8 @@
         </div>
         <div class="footer">Tổng số: {{listFee.length}} kết quả</div>
         <FeeListDetail v-if="formDetail" @close="closeForm" :mode="formMode" :listFeeGroup="listFeeGroup" :feeId="feeIdChange" @reloadData="loadData"/>
-        <FeeListDelete v-if="dialogDelete" @close="dialogDelete = false" @reloadData="loadData" :message="messageDelete" :mode="formMode" :listFeeId="listFeeIdDelete"/>
+        <FeeListDelete v-if="dialogDelete" @close="dialogDelete = false" @reloadData="loadData" 
+            :message="messageDelete" :mode="formMode" :listFeeId="listFeeIdDelete"/>
     </div>
 </template>
 <script>
@@ -233,6 +234,7 @@ export default {
             this.dialogDelete = true;
         },
         //Đóng các dialog
+        //Created by Phạm Việt Thắng (20/02/2021)
         closeForm() {
             this.formMode = null;
             this.formDetail = false;
@@ -246,9 +248,8 @@ export default {
             this.isLoading = true;
             this.listFee = [];
             //Lấy danh sách khoản thu
-            axios.get('http://localhost:60931/api/v1/Fees')
+            await axios.get('http://localhost:60931/api/v1/Fees')
                 .then(res => {
-                    console.log(res.data)
                     this.listFee = res.data;
                     for (let feeId in this.feeIds) {
                         if (this.listFee.filter((fee) => {
@@ -285,7 +286,7 @@ export default {
                     let fee_ = this.listFee.filter((fee) => {
                         return fee.FeeID == feeId;
                     })[0];
-                    if (fee_.IsActive || this.showFeeInactive) {
+                    if (fee_ && (fee_.IsActive || this.showFeeInactive)) {
                         return true;
                     }
                 }
