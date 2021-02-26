@@ -51,6 +51,8 @@ input[type="checkbox"] {
         opacity: 0.6;
     }
 
+    /* checkbox bị đảo ngược giá trị
+    created by Phạm Việt Thắng (20/02/2021) */
     input[type="checkbox"] + label span.convert{
         background-image: url('../../assets/ImagesIcons/ic_Checkbox_Active.svg');
     }
@@ -59,8 +61,6 @@ input[type="checkbox"] {
         background-image: url('../../assets/ImagesIcons/ic_Checkbox_Inactive.svg');
     }
     
-    /* checkbox bị đảo ngược giá trị
-    created by Phạm Việt Thắng (20/02/2021) */
     input[type="checkbox"] + label span.m-switch-input{
         width: 28px;
         background: url('../../assets/ImagesIcons/ic_Switch_Inactive.svg') no-repeat center;

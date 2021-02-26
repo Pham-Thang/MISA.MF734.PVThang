@@ -13,7 +13,7 @@ export default new Vuex.Store({
       },
       {
         id: "PlanningFee",
-        name: "Lập kế hoach thu",
+        name: "Lập kế hoạch thu",
         icon: "icon-planning-fee"
       },
       {
@@ -47,10 +47,14 @@ export default new Vuex.Store({
         icon: "icon-system"
       },
     ],
+    listToastMessage: []
   },
   mutations: {
     setCurrentTab(state, newTab) {
       state.currentTab = newTab;
+    },
+    setListToastMessage(state, newList) {
+      state.listToastMessage = newList;
     }
   },
   actions: {

@@ -24,6 +24,7 @@
 </template>
 <script>
 import axios from 'axios'
+import uuidv4 from '../basics/Common'
 
 export default {
     props: {
@@ -43,10 +44,26 @@ export default {
             for (let i in this.listFeeId) {
                 await axios.delete('http://localhost:60931/api/v1/Fees/' + this.listFeeId[i])
                     .then(res => {
-                        console.log(res.data);
-                    })
+                        // console.log(res.data);
+                        var newToast = {
+                            id: uuidv4(),
+                        }
+                        if (res.data == 1) {
+                                newToast.type = 'SUCCESS';
+                                newToast.message = "Xóa thành công!";
+                        } else {
+                                newToast.type = 'ERROR';
+                                newToast.message = "Có lỗi xảy ra vui lòng thử lại!";
+                        }
+                        this.$store.commit('setListToastMessage', [...this.$store.state.listToastMessage, newToast]);
+                        })
                     .catch(err => {
-                        alert(err.response.data.UserMessage);
+                        // alert(err.response.data.UserMessage);
+                        this.$store.commit('setListToastMessage', [...this.$store.state.listToastMessage, {
+                            id: uuidv4(),
+                            type: 'ERROR',
+                            message: err.response.data.UserMessage
+                        }])
                     })
             }
             this.$emit('reloadData');
