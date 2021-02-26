@@ -72,7 +72,9 @@
                 </tbody>
             </table>
         </div>
-        <div class="footer">Tổng số: {{listFee.length}} kết quả</div>
+        <div class="footer">Tổng số: {{listFee.filter((_fee) => {
+                            return ( _fee && (_fee.IsActive || showFeeInactive));
+                        }).length}} kết quả</div>
         <FeeListDetail v-if="formDetail" @close="closeForm" :mode="formMode" :listFeeGroup="listFeeGroup" :feeId="feeIdChange" @reloadData="loadData"/>
         <FeeListDelete v-if="dialogDelete" @close="dialogDelete = false" @reloadData="loadData" 
             :message="messageDelete" :mode="formMode" :listFeeId="listFeeIdDelete"/>
@@ -230,7 +232,10 @@ export default {
                 }
             }
             this.formMode = "DELETE";
-            this.messageDelete = "Bạn có chắc chắn muốn xóa những khoản thu đã chọn?";
+            if (this.listFeeIdDelete.length > 1) 
+                this.messageDelete = "Bạn có chắc chắn muốn xóa những khoản thu đã chọn?";
+            else 
+                this.messageDelete = "Bạn có chắc chắn muốn xóa khoản thu đã chọn?";
             this.dialogDelete = true;
         },
         //Đóng các dialog

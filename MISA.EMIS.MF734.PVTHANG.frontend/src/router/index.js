@@ -8,9 +8,44 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/', name: 'Home', component: Home },
   {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Home
+  },
+  {
     path: '/planning-fee',
-    name: 'FeeList',
+    name: 'PlanningFee',
     component: FeeList
+  },
+  {
+    path: '/manage-fee',
+    name: 'ManageFee',
+    component: Home
+  },
+  {
+    path: '/mange-bill',
+    name: 'ManageBill',
+    component: Home
+  },
+  {
+    path: '/receivable-payable',
+    name: 'ReceivablePayable',
+    component: Home
+  },
+  {
+    path: '/report',
+    name: 'Report',
+    component: Home
+  },
+  {
+    path: '/message',
+    name: 'Message',
+    component: Home
+  },
+  {
+    path: '/system',
+    name: 'System',
+    component: Home
   }
 ]
 

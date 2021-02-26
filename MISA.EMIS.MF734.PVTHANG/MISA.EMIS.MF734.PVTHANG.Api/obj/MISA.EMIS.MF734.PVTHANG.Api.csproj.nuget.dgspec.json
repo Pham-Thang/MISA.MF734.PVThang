@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Api\\MISA.EMIS.MF734.PVTHANG.Api.csproj": {}
+    "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Api\\MISA.EMIS.MF734.PVTHANG.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Api\\MISA.EMIS.MF734.PVTHANG.Api.csproj": {
+    "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Api\\MISA.EMIS.MF734.PVTHANG.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Api\\MISA.EMIS.MF734.PVTHANG.Api.csproj",
+        "projectUniqueName": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Api\\MISA.EMIS.MF734.PVTHANG.Api.csproj",
         "projectName": "MISA.EMIS.MF734.PVTHANG.Api",
-        "projectPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Api\\MISA.EMIS.MF734.PVTHANG.Api.csproj",
-        "packagesPath": "C:\\Users\\phamt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Api\\obj\\",
+        "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Api\\MISA.EMIS.MF734.PVTHANG.Api.csproj",
+        "packagesPath": "C:\\Users\\pvthang\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\phamt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pvthang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,14 +28,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj": {
-                "projectPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj"
+              "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj": {
+                "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj"
               },
-              "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj": {
-                "projectPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj"
+              "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj": {
+                "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj"
               },
-              "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\MISA.EMIS.MF734.PVTHANG.Service.csproj": {
-                "projectPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\MISA.EMIS.MF734.PVTHANG.Service.csproj"
+              "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\MISA.EMIS.MF734.PVTHANG.Service.csproj": {
+                "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\MISA.EMIS.MF734.PVTHANG.Service.csproj"
               }
             }
           }
@@ -95,21 +95,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj": {
+    "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj",
+        "projectUniqueName": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj",
         "projectName": "MISA.EMIS.MF734.PVTHANG.Common",
-        "projectPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj",
-        "packagesPath": "C:\\Users\\phamt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\obj\\",
+        "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj",
+        "packagesPath": "C:\\Users\\pvthang\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\phamt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pvthang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -149,21 +149,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj": {
+    "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj",
         "projectName": "MISA.EMIS.MF734.PVTHANG.DataLayer",
-        "projectPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj",
-        "packagesPath": "C:\\Users\\phamt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\obj\\",
+        "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj",
+        "packagesPath": "C:\\Users\\pvthang\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\phamt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pvthang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -177,8 +177,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj": {
-                "projectPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj"
+              "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj": {
+                "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj"
               }
             }
           }
@@ -217,21 +217,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\MISA.EMIS.MF734.PVTHANG.Service.csproj": {
+    "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\MISA.EMIS.MF734.PVTHANG.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\MISA.EMIS.MF734.PVTHANG.Service.csproj",
+        "projectUniqueName": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\MISA.EMIS.MF734.PVTHANG.Service.csproj",
         "projectName": "MISA.EMIS.MF734.PVTHANG.Service",
-        "projectPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\MISA.EMIS.MF734.PVTHANG.Service.csproj",
-        "packagesPath": "C:\\Users\\phamt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\obj\\",
+        "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\MISA.EMIS.MF734.PVTHANG.Service.csproj",
+        "packagesPath": "C:\\Users\\pvthang\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\phamt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pvthang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -245,11 +245,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj": {
-                "projectPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj"
+              "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj": {
+                "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj"
               },
-              "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj": {
-                "projectPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj"
+              "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj": {
+                "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.DataLayer\\MISA.EMIS.MF734.PVTHANG.DataLayer.csproj"
               }
             }
           }
@@ -278,7 +278,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

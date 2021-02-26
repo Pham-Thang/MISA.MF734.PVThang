@@ -1,7 +1,9 @@
 <template>
     <div id="header">
         <div class="item float--left header__title">
-            <div class="title__text">Lập kế hoạch thu</div>
+            <div class="title__text">
+                {{$store.state.menuTab.find(tab => tab.id === $route.name)? 
+                $store.state.menuTab.find(tab => tab.id === $route.name).name:""}}</div>
             <div class="title__icon"></div>
         </div>
         <div class="item float--right">

@@ -6,10 +6,10 @@
             <div class="icon--bar"></div>
         </div>
         <div class="menu__content">
-            <div v-for="item in listItem" :key="item.key" :class="{item: true, 'item--current': item.key===current}" >
-                <div :class="'item__icon icon-' + item.key"></div>
-                <div class="item__text">{{item.title}}</div>
-            </div>
+            <router-link v-for="item in $store.state.menuTab" :key="item.id" :to="{name: item.id}" :class="{item: true, 'item--current': item.id===$route.name}">
+                <div :class="'item__icon ' + item.icon"></div>
+                <div class="item__text">{{item.name}}</div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -17,45 +17,19 @@
 export default {
     data() {
         return {
-            //item đang được chọn
-            current: "planning-fee",
-            //Danh sách item
-            listItem: [
-                {
-                    key: "dashboard",
-                    title: "Tổng quan"
-                },
-                {
-                    key: "planning-fee",
-                    title: "Lập kế hoạch thu"
-                },
-                {
-                    key: "manage-fee",
-                    title: "Quản lý thu"
-                },
-                {
-                    key: "manage-bill",
-                    title: "Quản lý hóa đơn"
-                },
-                {
-                    key: "receivable-payable",
-                    title: "Số phải thu, phải trả"
-                },
-                {
-                    key: "report",
-                    title: "Báo cáo"
-                },
-                {
-                    key: "message",
-                    title: "Tin nhắn"
-                },
-                {
-                    key: "system",
-                    title: " Hệ thống"
-                }
-            ]
         }
     },
+    methods: {
+        setCurrentTab(newTab) {
+            this.$store.commit('setCurrentTab', newTab);
+        }
+    },
+    mounted() {
+        this.$store.commit('setCurrentTab', this.$route.name);
+    },
+    updated() {
+        this.$store.commit('setCurrentTab', this.$route.name);
+    }
 }
 </script>
 <style scoped>
@@ -115,6 +89,8 @@ export default {
         border-top: 2px solid #24394B;
         overflow: hidden;
         align-items: center;
+        color: #E9EBEE;
+        text-decoration: none;
         cursor: pointer;
     }
 

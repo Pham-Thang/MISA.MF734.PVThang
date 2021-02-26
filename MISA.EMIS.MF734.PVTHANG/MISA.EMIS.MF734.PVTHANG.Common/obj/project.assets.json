@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\phamt\\.nuget\\packages\\": {}
+    "C:\\Users\\pvthang\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj",
+      "projectUniqueName": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj",
       "projectName": "MISA.EMIS.MF734.PVTHANG.Common",
-      "projectPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj",
-      "packagesPath": "C:\\Users\\phamt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\phamt\\source\\repos\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\obj\\",
+      "projectPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\MISA.EMIS.MF734.PVTHANG.Common.csproj",
+      "packagesPath": "C:\\Users\\pvthang\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pvthang\\Documents\\MISA.MF734.PVThang\\MISA.EMIS.MF734.PVTHANG\\MISA.EMIS.MF734.PVTHANG.Common\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\phamt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pvthang\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

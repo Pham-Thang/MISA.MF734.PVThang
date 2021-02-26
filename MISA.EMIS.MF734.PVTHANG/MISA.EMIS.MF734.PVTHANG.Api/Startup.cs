@@ -80,7 +80,7 @@ namespace MISA.EMIS.MF734.PVTHANG.Api
                 _serviceResult.ErrorMessage.DevMessage = exception.Message;
                 _serviceResult.ErrorMessage.UserMessage = Common.Properties.Resources.ErrorException;
 
-                await context.Response.WriteAsJsonAsync(_serviceResult);
+                await context.Response.WriteAsJsonAsync(_serviceResult.ErrorMessage);
             }));
 
             app.UseRouting();
