@@ -265,13 +265,15 @@ export default {
                     }
                     this.isLoading = false;
                 })
-                .catch(res => {
-                    console.log(res);
-                    this.feeIds = this.feeIds.filter((feeId) => {
-                        return this.listFee.filter((fee) => {
+                .catch(() => {
+                    //console.log(res);
+                    for (var feeId in this.feeIds) {
+                        if (this.listFee.filter((fee) => {
                             return fee.FeeID == feeId;
-                        }).length > 0;
-                    })
+                        }).length > 0) {
+                            delete this.feeIds[feeId];
+                        }
+                    }
                     this.isLoading = false;
                 })
         },
