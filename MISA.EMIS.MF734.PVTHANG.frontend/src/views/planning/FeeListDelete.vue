@@ -10,10 +10,10 @@
             <div class="dialog__footer">
                 <div class="footer__item float--left"></div>
                 <div class="footer__item float--right" v-if="mode === 'NOTIFICATION' || mode === null">
-                    <button class="m-button" @click="close">Đồng ý</button>
+                    <button class="m-button" @click="close" ref="Yes">Đồng ý</button>
                 </div>
                 <div class="footer__item float--right" v-if="mode === 'DELETE'">
-                    <button class="m-button" @click="deleteFee">Xóa</button>
+                    <button class="m-button" @click="deleteFee" ref="Delete">Xóa</button>
                 </div>
                 <div class="footer__item float--right" v-if="mode === 'DELETE'" >
                     <button class="m-second-button" @click="close">Không</button>
@@ -70,6 +70,12 @@ export default {
             this.$emit('close');
         }
     },
+    mounted() {
+        if (this.mode === 'DELETE')
+            this.$refs.Delete.focus();
+        else 
+            this.$refs.Yes.focus();
+    }
 }
 </script>
 <style scoped>
