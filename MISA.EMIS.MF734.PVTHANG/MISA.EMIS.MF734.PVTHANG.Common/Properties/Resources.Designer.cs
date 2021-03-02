@@ -115,11 +115,29 @@ namespace MISA.EMIS.MF734.PVTHANG.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tài khoản hoặc mật khẩu không chính xác, vui lòng kiểm tra lại!.
+        /// </summary>
+        public static string ErrorLogin {
+            get {
+                return ResourceManager.GetString("ErrorLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to không được để trống.
         /// </summary>
         public static string ErrorRequired {
             get {
                 return ResourceManager.GetString("ErrorRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Đăng nhập thành công!.
+        /// </summary>
+        public static string SuccessLogin {
+            get {
+                return ResourceManager.GetString("SuccessLogin", resourceCulture);
             }
         }
         

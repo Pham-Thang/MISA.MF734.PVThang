@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MISA.EMIS.MF734.PVTHANG.Common.Models;
 using MISA.EMIS.MF734.PVTHANG.DataLayer.Classes;
@@ -17,6 +19,7 @@ using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace MISA.EMIS.MF734.PVTHANG.Api
@@ -35,10 +38,53 @@ namespace MISA.EMIS.MF734.PVTHANG.Api
         {
 
             //services.AddControllers();
-            services.AddCors();
+            services.AddCors(); 
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    SaveSigninToken = true,
+                    ValidIssuer = "https://localhost:60931",
+                    ValidAudience = "https://localhost:60931",
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
+                };
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.EMIS.MF734.PVTHANG.Api", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = @"JWT Authorization",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Scheme = "oauth2",
+                            Name = "Bearer",
+                            In = ParameterLocation.Header,
+                        },
+                        new List<string>()
+                    }
+                });
             });
 
             //
@@ -52,9 +98,11 @@ namespace MISA.EMIS.MF734.PVTHANG.Api
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped<IFeeService, FeeService>();
             services.AddScoped<IFeeGroupService, FeeGroupService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IDatabaseConnector, DatabaseConnector>();
             services.AddScoped<IFeeConnector, FeeConnector>();
             services.AddScoped<IFeeGroupConnector, FeeGroupConnector>();
+            services.AddScoped<IUserConnector, UserConnector>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,6 +132,8 @@ namespace MISA.EMIS.MF734.PVTHANG.Api
             }));
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

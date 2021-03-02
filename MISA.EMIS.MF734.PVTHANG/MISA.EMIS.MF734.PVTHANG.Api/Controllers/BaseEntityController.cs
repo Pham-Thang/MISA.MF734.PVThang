@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MISA.EMIS.MF734.PVTHANG.Service.Classes;
 using MISA.EMIS.MF734.PVTHANG.Service.Interfaces;
 using System;
@@ -15,7 +16,7 @@ namespace MISA.EMIS.MF734.PVTHANG.Api.Controllers
     public class BaseEntityController<TEntity> : ControllerBase
     {
         #region Declare
-        IBaseService<TEntity> _baseService;
+        protected IBaseService<TEntity> _baseService;
         #endregion
 
         #region Constructor

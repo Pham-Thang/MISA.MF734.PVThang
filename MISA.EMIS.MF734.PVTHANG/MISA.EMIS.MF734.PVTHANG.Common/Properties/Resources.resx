@@ -135,8 +135,14 @@
   <data name="ErrorLenght" xml:space="preserve">
     <value>quá dài</value>
   </data>
+  <data name="ErrorLogin" xml:space="preserve">
+    <value>Tài khoản hoặc mật khẩu không chính xác, vui lòng kiểm tra lại!</value>
+  </data>
   <data name="ErrorRequired" xml:space="preserve">
     <value>không được để trống</value>
+  </data>
+  <data name="SuccessLogin" xml:space="preserve">
+    <value>Đăng nhập thành công!</value>
   </data>
   <data name="UnDeveloped" xml:space="preserve">
     <value>Tính năng chưa được phát triển, vui lòng thử lại sau!</value>
